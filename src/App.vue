@@ -2,7 +2,7 @@
   <div id="app" class="small-container">
     <h1>Employees</h1>
 
-    <employee-table />
+    <employee-table :employees="employees" />
   </div>
 </template>
 
@@ -13,6 +13,27 @@
     name: 'app',
     components: {
       EmployeeTable,
+    },
+    data() {
+      return {
+        employees: [
+          {
+            id: 1,
+            name: 'Harry Potter',
+            email: 'potter@hogwards.com',
+          },
+          {
+            id: 2,
+            name: 'Hermione Granger',
+            email: 'granger@hogwards.com',
+          },
+          {
+            id: 3,
+            name: 'Ron Weasley',
+            email: 'weasley@hogwards.com',
+          },
+        ],
+      }
     },
   }
 </script>

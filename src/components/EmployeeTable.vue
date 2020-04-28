@@ -8,18 +8,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Harry Potter</td>
-          <td>potter@hogwards.com</td>
-        </tr>
-        <tr>
-          <td>Hermione Granger</td>
-          <td>granger@hogwards.com</td>
-        </tr>
-        <tr>
-          <td>Ron Weasley</td>
-          <td>weasley@hogwards.com</td>
-        </tr>
+        <tr v-for="employee in employees" :key="employee.id">
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.email }}</td>
+        </tr>     
       </tbody>
     </table>
   </div>
@@ -27,8 +19,11 @@
 
 <script>
   export default {
-    name: 'employee-table',
-  }
+  name: 'employee-table',
+  props: {
+    employees: Array,
+  },
+}
 </script>
 
 <style scoped></style>
